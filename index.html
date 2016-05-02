@@ -19,25 +19,331 @@
     </section>
 
     <section class="main-content">
-      <h2>
-<a id="commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h2>
-
-<h3>
-<a id="newturtle" class="anchor" href="#newturtle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>newTurtle</h3>
-
-<p>newTurtle("g")</p>
-
-<h3>
-<a id="forward--fw" class="anchor" href="#forward--fw" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>forward / fw</h3>
-
-<h3>
-<a id="back--bk" class="anchor" href="#back--bk" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>back / bk</h3>
+      <h1>
+<a id="commands" class="anchor" href="#commands" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Commands</h1>
 
 <h2>
-<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
+<a id="environment-functions" class="anchor" href="#environment-functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Environment functions</h2>
+
+<h3>
+<a id="newturtlename" class="anchor" href="#newturtlename" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>newTurtle(name)</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Creates a new turtle and associates a name with it. The new turtle will appear on the center of the drawing space.</li>
+<li>
+<strong>Important note 1:</strong> The environment already provides a default turtle called "t".</li>
+<li>
+<strong>Important note 2:</strong> The multi-turtle subsystem is still an experimental feature of TurtleJS.</li>
+<li>
+<strong>Example:</strong> <code>newTurtle("greenTurtle");</code>
+</li>
+</ul>
+
+<hr>
 
 <h2>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h2>
+<a id="spaces-functions" class="anchor" href="#spaces-functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Space's functions</h2>
+
+<h3>
+<a id="clear" class="anchor" href="#clear" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>clear()</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Clears the whole space drawings, but does not change the turtles' positions and appearances.</li>
+<li>
+<strong>Example:</strong> <code>clear();</code>
+</li>
+</ul>
+
+<h3>
+<a id="bkcolorred-green-blue" class="anchor" href="#bkcolorred-green-blue" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>bkColor(red, green, blue)</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Changes the space's background color. The red, green and blue parameters are all of type Number. They range from 0 to 100, each one specifying the percentage for each color component.</li>
+<li>
+<strong>Example:</strong> <code>bkColor(100, 0, 0); // Sets the background color to red.</code>
+</li>
+</ul>
+
+<h3>
+<a id="maxx" class="anchor" href="#maxx" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>maxX()</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Returns the maximum horizontal (x) coordinate of the 2D space.</li>
+<li>
+<strong>Example:</strong> <code>t.go(maxX(), maxY());</code>
+</li>
+</ul>
+
+<h3>
+<a id="maxy" class="anchor" href="#maxy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>maxY()</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Returns the maximum vertical (y) coordinate of the 2D space.</li>
+<li>
+<strong>Example:</strong> <code>t.go(maxX(), maxY());</code>
+</li>
+</ul>
+
+<hr>
+
+<h2>
+<a id="turtles-positioning-methods-and-properties" class="anchor" href="#turtles-positioning-methods-and-properties" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Turtle's positioning methods and properties</h2>
+
+<h3>
+<a id="forwarddistance--fwdistance" class="anchor" href="#forwarddistance--fwdistance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>forward(distance) / fw(distance)</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Moves the turtle forward with the specified distance.</li>
+<li>
+<strong>Example:</strong> <code>t.fw(100);</code>
+</li>
+</ul>
+
+<h3>
+<a id="backdistance--bkdistance" class="anchor" href="#backdistance--bkdistance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>back(distance) / bk(distance)</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Moves the turtle backwards with the specified distance.</li>
+<li>
+<strong>Example:</strong> <code>t.bk(100);</code>
+</li>
+</ul>
+
+<h3>
+<a id="leftangle--ltangle" class="anchor" href="#leftangle--ltangle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>left(angle) / lt(angle)</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Rotates the turtle counterclockwise with the specified angle. This is rotation is a relative to the current turtle's heading.</li>
+<li>
+<strong>Example:</strong> <code>t.lt(90); //Rotates 90 degrees.</code>
+</li>
+</ul>
+
+<h3>
+<a id="rightangle--rtangle" class="anchor" href="#rightangle--rtangle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>right(angle) / rt(angle)</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Rotates the turtle clockwise with the specified angle. This is rotation is a relative to the current turtle's heading.</li>
+<li>
+<strong>Example:</strong> <code>t.rt(90); //Rotates 90 degrees.</code>
+</li>
+</ul>
+
+<h3>
+<a id="gox-y" class="anchor" href="#gox-y" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>go(x, y)</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Absolute positioning. Moves the turtle to the specified coordinates.</li>
+<li>
+<strong>Note:</strong> The upper left corner of the drawing space is (0, 0). The vertical (y) coordinates increases from top to bottom. </li>
+<li>
+<strong>Example:</strong> <code>newTurtle("greenTurtle");</code>
+</li>
+</ul>
+
+<h3>
+<a id="home" class="anchor" href="#home" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>home()</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Moves the turtle to the center of the drawing space.</li>
+<li>
+<strong>Example:</strong> <code>t.home();</code>
+</li>
+</ul>
+
+<h3>
+<a id="x-number-read-only-property" class="anchor" href="#x-number-read-only-property" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>x [Number, read-only property]</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Returns the turtle's current horizontal (x) coordinate.</li>
+<li>
+<strong>Example:</strong> <code>t.goto(t.x, 200); //Moves the turtle only on the vertical axis.</code>
+</li>
+</ul>
+
+<h3>
+<a id="y-number-read-only-property" class="anchor" href="#y-number-read-only-property" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>y [Number, read-only property]</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Returns the turtle's current vertical (y) coordinate.</li>
+<li>
+<strong>Example:</strong> <code>t.goto(200, t.y); //Moves the turtle only on the horizontal axis.</code>
+</li>
+</ul>
+
+<h3>
+<a id="heading-number-property" class="anchor" href="#heading-number-property" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>heading [Number, property]</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Allows to set (and get) the absolute heading angle of the turtle.</li>
+<li>
+<strong>Example:</strong> <code>t.heading = t.heading + 45; //Same as t.rt(45)</code>
+***</li>
+</ul>
+
+<h2>
+<a id="turtles-appearance-methods-and-properties" class="anchor" href="#turtles-appearance-methods-and-properties" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Turtle's appearance methods and properties</h2>
+
+<h3>
+<a id="visible-boolean-property" class="anchor" href="#visible-boolean-property" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>visible [Boolean, property]</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Sets/gets the visibility of the turtle itself, so it can be shown or hidden.</li>
+<li>
+<strong>Example:</strong> <code>t.visible = !t.visible; //Toggles turtle's visibility.</code>
+</li>
+</ul>
+
+<h3>
+<a id="scale-number-property" class="anchor" href="#scale-number-property" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>scale [Number, property]</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Allows to set (and get) the scale of the turtle's image. It's default value is 1.</li>
+<li>
+<strong>Example:</strong> <code>t.scale = t.scale*3.5;</code>
+</li>
+</ul>
+
+<h3>
+<a id="image-string-property" class="anchor" href="#image-string-property" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>image [String, property]</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Sets/gets the image of the turtle. Provided images are "turtle" (default), "rocket" and "turtleSolid".</li>
+<li>
+<strong>Example:</strong> <code>t.image = "rocket";</code>
+</li>
+</ul>
+
+<h3>
+<a id="show" class="anchor" href="#show" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>show()</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Convenience method equivalent to setting visible to true.</li>
+<li>
+<strong>Example:</strong> <code>t.show();</code>
+</li>
+</ul>
+
+<h3>
+<a id="hide" class="anchor" href="#hide" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>hide()</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Convenience method equivalent to setting visible to false.</li>
+<li>
+<strong>Example:</strong> <code>t.hide();</code>
+</li>
+</ul>
+
+<hr>
+
+<h2>
+<a id="turtles-drawing-methods-and-properties" class="anchor" href="#turtles-drawing-methods-and-properties" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Turtle's drawing methods and properties</h2>
+
+<h3>
+<a id="clear--cl" class="anchor" href="#clear--cl" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>clear() / cl()</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Clears all the turtle's drawings..</li>
+<li>
+<strong>Example:</strong> <code>t.cl();</code>
+</li>
+</ul>
+
+<h3>
+<a id="penwidth--pw" class="anchor" href="#penwidth--pw" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>penWidth / pw</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Sets/gets the pen's width.</li>
+<li>
+<strong>Example:</strong> <code>t.pw = 5;</code>
+</li>
+</ul>
+
+<h3>
+<a id="pcred-green-blue" class="anchor" href="#pcred-green-blue" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>pc(red, green, blue)</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Sets/gets the pen's color. The red, green and blue parameters are all of type Number. They range from 0 to 100, each one specifying the percentage for each color component.</li>
+<li>
+<strong>Example:</strong> <code>t.pc(100, 50, 100);</code>
+</li>
+</ul>
+
+<h3>
+<a id="ispendown-bool-get" class="anchor" href="#ispendown-bool-get" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>isPenDown: Bool {get}</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Returns true if the turtle's pen is currently down.</li>
+<li>
+<strong>Example:</strong> <code>t.visible = t.isPenDown;</code>
+</li>
+</ul>
+
+<h3>
+<a id="penup--pu" class="anchor" href="#penup--pu" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>penUp() / pu()</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Sets the turtle's pen up.</li>
+<li>
+<strong>Example:</strong> <code>t.pu();</code>
+</li>
+</ul>
+
+<h3>
+<a id="pendown--pd" class="anchor" href="#pendown--pd" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>penDown() / pd()</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> Sets the turtle's pen down.</li>
+<li>
+<strong>Example:</strong> <code>t.pd();</code>
+</li>
+</ul>
+
+<hr>
+
+<h2>
+<a id="turtles-combined-drawing-and-position-methods" class="anchor" href="#turtles-combined-drawing-and-position-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Turtle's combined drawing and position methods</h2>
+
+<h3>
+<a id="reset" class="anchor" href="#reset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>reset()</h3>
+
+<ul>
+<li>
+<strong>Description:</strong> This is a convenience method that calls clear() and home(), in that order: it clears all this turtle's drawings and sends the turtle to home (the center of the drawing space).</li>
+<li>
+<strong>Example:</strong> <code>t.reset();</code>
+</li>
+</ul>
+
+<hr>
+
+<h1>
+<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h1>
 
 <p>Created in 2016 by <a href="https://github.com/miniBloq" class="user-mention">@miniBloq</a></p>
 
