@@ -50,7 +50,7 @@
 
 <ul>
 <li>
-<strong>Description:</strong> Clears the whole space drawings, but does not change the turtles' positions and appearances.</li>
+<strong>Description:</strong> Clears all the drawings in the space, but does not change the turtles' positions and appearances.</li>
 <li>
 <strong>Example:</strong> <code>clear();</code>
 </li>
@@ -99,7 +99,7 @@
 
 <ul>
 <li>
-<strong>Description:</strong> Moves the turtle forward with the specified distance.</li>
+<strong>Description:</strong> Moves the turtle forward with the specified distance. Negative distance values will move the turtle backwards.</li>
 <li>
 <strong>Example:</strong> <code>t.fw(100);</code>
 </li>
@@ -110,7 +110,7 @@
 
 <ul>
 <li>
-<strong>Description:</strong> Moves the turtle backwards with the specified distance.</li>
+<strong>Description:</strong> Moves the turtle backwards with the specified distance. Negative distance values will move the turtle forward.</li>
 <li>
 <strong>Example:</strong> <code>t.bk(100);</code>
 </li>
@@ -121,7 +121,7 @@
 
 <ul>
 <li>
-<strong>Description:</strong> Rotates the turtle counterclockwise with the specified angle. This is rotation is a relative to the current turtle's heading.</li>
+<strong>Description:</strong> Rotates the turtle counterclockwise with the specified angle. This rotation is relative to the current turtle's heading. Negative angle values will rotate the turtle clockwise.</li>
 <li>
 <strong>Example:</strong> <code>t.lt(90); //Rotates 90 degrees.</code>
 </li>
@@ -132,7 +132,7 @@
 
 <ul>
 <li>
-<strong>Description:</strong> Rotates the turtle clockwise with the specified angle. This is rotation is a relative to the current turtle's heading.</li>
+<strong>Description:</strong> Rotates the turtle clockwise with the specified angle. This rotation is relative to the current turtle's heading. Negative angle values will rotate the turtle counterclockwise.</li>
 <li>
 <strong>Example:</strong> <code>t.rt(90); //Rotates 90 degrees.</code>
 </li>
@@ -147,7 +147,7 @@
 <li>
 <strong>Note:</strong> The upper left corner of the drawing space is (0, 0). The vertical (y) coordinates increases from top to bottom. </li>
 <li>
-<strong>Example:</strong> <code>newTurtle("greenTurtle");</code>
+<strong>Example:</strong> <code>t.go(maxX()/3, maxY() - 200);</code>
 </li>
 </ul>
 
@@ -169,7 +169,7 @@
 <li>
 <strong>Description:</strong> Returns the turtle's current horizontal (x) coordinate.</li>
 <li>
-<strong>Example:</strong> <code>t.goto(t.x, 200); //Moves the turtle only on the vertical axis.</code>
+<strong>Example:</strong> <code>t.go(t.x, 200); //Moves the turtle only on the vertical axis.</code>
 </li>
 </ul>
 
@@ -180,7 +180,7 @@
 <li>
 <strong>Description:</strong> Returns the turtle's current vertical (y) coordinate.</li>
 <li>
-<strong>Example:</strong> <code>t.goto(200, t.y); //Moves the turtle only on the horizontal axis.</code>
+<strong>Example:</strong> <code>t.go(200, t.y); //Moves the turtle only on the horizontal axis.</code>
 </li>
 </ul>
 
@@ -192,8 +192,10 @@
 <strong>Description:</strong> Allows to set (and get) the absolute heading angle of the turtle.</li>
 <li>
 <strong>Example:</strong> <code>t.heading = t.heading + 45; //Same as t.rt(45)</code>
-***</li>
+</li>
 </ul>
+
+<hr>
 
 <h2>
 <a id="turtles-appearance-methods-and-properties" class="anchor" href="#turtles-appearance-methods-and-properties" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Turtle's appearance methods and properties</h2>
@@ -225,7 +227,7 @@
 
 <ul>
 <li>
-<strong>Description:</strong> Sets/gets the image of the turtle. Provided images are "turtle" (default), "rocket" and "turtleSolid".</li>
+<strong>Description:</strong> Sets/gets the image of the turtle. Provided images on this (very first) version are "turtle" (default), "rocket" and "turtleSolid".</li>
 <li>
 <strong>Example:</strong> <code>t.image = "rocket";</code>
 </li>
@@ -263,7 +265,7 @@
 
 <ul>
 <li>
-<strong>Description:</strong> Clears all the turtle's drawings..</li>
+<strong>Description:</strong> Clears all the turtle's drawings.</li>
 <li>
 <strong>Example:</strong> <code>t.cl();</code>
 </li>
@@ -292,7 +294,7 @@
 </ul>
 
 <h3>
-<a id="ispendown-bool-get" class="anchor" href="#ispendown-bool-get" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>isPenDown: Bool {get}</h3>
+<a id="ispendown-bool" class="anchor" href="#ispendown-bool" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>isPenDown: Bool</h3>
 
 <ul>
 <li>
@@ -334,7 +336,7 @@
 
 <ul>
 <li>
-<strong>Description:</strong> This is a convenience method that calls clear() and home(), in that order: it clears all this turtle's drawings and sends the turtle to home (the center of the drawing space).</li>
+<strong>Description:</strong> This is a convenience method that calls clear() and home(), in that order: it clears all the turtle's drawings and sends the turtle to home (the center of the drawing space).</li>
 <li>
 <strong>Example:</strong> <code>t.reset();</code>
 </li>
